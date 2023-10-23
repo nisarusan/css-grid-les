@@ -1,1 +1,84 @@
-/*Maak hier jouw CSS!*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+}
+
+
+.container {
+    display: grid;
+    padding: 20px;
+    column-gap: 16px;
+    row-gap: 16px;
+    grid-template-columns: 1fr;
+    /*grid-template-columns: 400px 440px 440px;*/
+    grid-template-rows: 50px auto repeat(5, 50px);
+    grid-template-areas:
+                "a"
+    "b"
+    "c"
+    "d"
+    "e"
+    "."
+    "f";
+
+    /*grid-template-areas:*/
+    /*"a c c"*/
+    /*"b e d"*/
+    /*"f f f"*/
+}
+
+.item {
+    border: 2px solid hsl(355, 52%, 38%);
+    display: flex;
+    padding: 16px;
+    background-color: hsl(355, 52%, 48%);
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-a {
+    grid-area: a;
+}
+
+.item-b {
+    grid-area: b;
+}
+
+.item-c {
+    grid-area: c;
+}
+
+.item-d {
+    grid-area: d;
+}
+
+.item-e {
+    grid-area: e;
+}
+
+.item-f {
+    grid-area: f;
+}
+
+@media (min-width: 700px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        /*grid-template-columns: 400px 440px 440px;*/
+        grid-template-rows: 50px 190px 100px auto 50px;
+        grid-template-areas:
+                "a c c"
+                "b c c"
+                "b e d"
+                "b e ."
+                "f f f";
+    }
+}
